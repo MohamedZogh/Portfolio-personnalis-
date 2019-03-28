@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    transition: all .2s ease 0s
+}
+
+*:hover {transition: all .2s ease 0s}
+
+/**********************************
+***** Remove Default Settings *****
+**********************************/
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none
+    }
+
+    a, a:hover, a:visited, a:active 
+    {text-decoration: none}
+/**********************************
+***** Remove Default Settings *****
+**********************************/
+
+
+/*************************************************
+********************** MENU **********************
+**************************************************/
+    #menu-burger {display: none}
+
+    #menu-bars {
+        /* FLEX */
+            display: flex;
+        /* FLEX */
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    #menu-bars li {
+        flex: 1;
+        /* FLEX */
+            display: flex;
+            justify-content: center
+        /* FLEX */
+    }
+
+    #menu-bars a {
+        flex: 1;
+        /* TEXT */
+            color: #f2f2f2;
+            text-align: center;
+        /* TEXT */
+        padding: 10px 0px;
+        background-color: #262626
+    }
+
+    #menu-bars a:hover {
+        color: #262626;
+        background-color: #f2f2f2
+    }
+
+    @media (max-width: 750px)
+    {
+        #menu-burger {
+            /* FLEX */
+                display: flex;
+            /* FLEX */
+            padding: 7.5px 0;
+            background-color: #000000
+        }
+
+        #menu-burger div:first-child {flex: 3}
+
+        #menu-burger div:last-child {
+            flex: 1;
+            /* FLEX */
+                display: flex;
+                justify-content: center
+            /* FLEX */
+        }
+
+        .fa-bars {
+            color: white;
+            font-size: 75px
+        }
+
+        .none {display: none}
+
+        .flex {display: flex}
+
+        #menu-bars {
+            flex: 3;
+            /* FLEX */
+                flex-direction: column
+            /* FLEX */
+        }
+
+        #menu-bars a {
+            padding-left: 30px;
+            text-align: initial
+        }
+
+        #right-side {
+            flex: 1;
+            background-color: #000000
+        }
+    }
+/*************************************************
+********************** MENU **********************
+**************************************************/ 
