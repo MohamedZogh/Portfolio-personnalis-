@@ -78,7 +78,7 @@ function stickyMenu(){
 
 function bar_progress(){
 
-    var div_competences = document.getElementById('about_me').offsetTop;
+    var div_competences = document.getElementById('about_me').offsetTop - 50;
     var quantite1 = document.getElementById('quantite1');
     var quantite2 = document.getElementById('quantite2');
     var quantite3 = document.getElementById('quantite3');
@@ -88,10 +88,10 @@ function bar_progress(){
         quantite2.style.animation = "chargement_2 5s";   
         quantite3.style.animation = "chargement_3 5s";             
     }
-    else {
-        quantite1.style.animation = ""; 
-        quantite2.style.animation = "";   
-        quantite3.style.animation = "";             
-    }
+    // else {
+    //     quantite1.style.animation = ""; 
+    //     quantite2.style.animation = "";   
+    //     quantite3.style.animation = "";             
+    // }
     
 }
