@@ -70,7 +70,14 @@ body{
 }
 .burger_invisible{
     padding:0;
-    display: none;
+    /* display: none; */
+    transform: translateX(-20vw);
+    width: 20vw;
+    height: 100vh;
+    background-color: grey;
+    margin:0;
+    padding:0;
+    display: flex;
     flex-direction:column;
 
 }
@@ -82,7 +89,7 @@ top:0vh;
 left:0;
 
 }
-.burger_visible{
+/* .burger_visible{
     width: 20vw;
     height: 100vh;
     background-color: grey;
@@ -90,8 +97,8 @@ left:0;
     padding:0;
     display: flex;
     flex-direction:column;
-    /* justify-content: space-between; */
-}
+    /* justify-content: space-between; 
+} */
 .burger_sticky{
     width: 50vw;
     background-color: grey;
@@ -109,7 +116,7 @@ li{
     list-style-type: none;
     flex: 1;
 }
-a {
+.liste a {
     display: flex;
     justify-content: center;
     align-items:center;
@@ -290,7 +297,51 @@ h4{
         width: 75%;
     }
 }
+#quantite1{
+    box-sizing: border-box;
+    padding:10px;
+    height: 100%;
+    border-radius: 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 85%;
+    background-color: blue;
+    /* animation: chargement_1 5s; */
+}
 
+@keyframes chargement_1 {
+    0%{
+        width: 0;
+    }
+
+    100%{
+        width: 85%;
+    }
+}
+
+#quantite4{
+    box-sizing: border-box;
+    padding:10px;
+    height: 3vh;
+    border-radius: 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 55%;
+    background-color: blue; 
+    /* animation: chargement_2 5s; */
+}
+
+@keyframes chargement_4 {
+    0%{
+        width: 0;
+    }
+
+    100%{
+        width: 55%;
+    }
+}
 #bouton{
     align-self: flex-start;
     display:flex;
@@ -754,63 +805,130 @@ text-align: center;
 
 #blog{
     width:100vw;
-    height: 120vh;
-    background-color: #F7F7F7;
+    height: 50vh;
+    background-color: rgb(189, 26, 26);
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
     position:relative;
 }
 #blog h1{
-    position:absolute;
-    top:2vh;
+    margin-top : 12vh;
 }
-.blog_image{
-    width: 95%;
-    position:absolute;
+
+/* ___________________________________________________________________________________________________________________________________________________________________________*/                       
+                                                        /*Slider*/                                                                                               
+/* ___________________________________________________________________________________________________________________________________________________________________________*/
+
+.slideshow{
+    margin: 0 auto;
+    padding-top:50px;
+    /* height:100vh; */
+    background:skyblue;
+    box-sizing:border-box;
 }
-.blog_size_images{
+#content{
+    margin:auto;
+    width:17vw;
+    perspective:1000px;
+    position:relative;
+}
+#content-carroussel {
     width:100%;
+    position: absolute;
+    float: right;
+    animation: slide 15s infinite linear;
+    transform-style: preserve-3d;
 }
-.slider_blog h5{
-    color: grey;
-    font-size: 1em;
+#content-carroussel:hover{
+    animation-play-state: paused;
+    cursor: pointer;
 }
-.slider_blog p{
-    font-size:1.5em;
-    font-weight: bold;
-}
-.slider_blog a{
-    color:blue;
-    text-decoration: underline;
-}
-
-#blog1{
-    opacity: 0;
-}
-#blog2{
-    opacity: 1;
-}
-#blog3{
-    opacity: 0;
-}
-#blog4{
-    opacity: 0;
-}
-
-#block2{
-    height:50vh;
+#content-carroussel figure{
     width:100%;
-    display:flex;
-}
-#block2 img{
-height:auto;
-width:50%;
+    height:15vh;
+    border: 1px solid #4d444d;
+    position: absolute;
 }
 
+#content-carroussel figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(2) {
+    transform: rotateY(40deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(3) {
+    transform: rotateY(80deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(4) {
+    transform: rotateY(120deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(5) {
+    transform: rotateY(160deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(6) {
+    transform: rotateY(200deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(7) {
+    transform: rotateY(240deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(8) {
+    transform: rotateY(280deg) translateZ(32vw);
+}
+#content-carroussel figure:nth-child(9) {
+    transform: rotateY(320deg) translateZ(32vw);
+}
+.shadow{
+    position: absolute;
+    box-shadow: 0 0 20px 0 #000;
+    border-radius: 2px;
+}
+#content-carroussel img{
+    image-rendering: auto;
+    transition: all 0.3s;
+    width:100%;
+    height:100%;
+}
+#content-carroussel img:hover{
+    transform:scale(1.5, 2);
+    transition: all 0.3s;
+    
+}
+#content-carroussel figcaption{
+    position: absolute;
+    top:-2vh;
+    left :30%;
+    color: rgb(7, 168, 243);
+    font-weight: 700;
+}
+#content-carroussel span{
+    position: absolute;
+    top:17vh;
+    
+    color:#09c;
+    background:rgba(0,0,0,.9);
+    padding:15px;
+    border-radius:3px;
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+    transform:scale(0) rotate(-12deg);
+    transition:all .25s;
+    display: none;
+}
+#content-carroussel a:hover span{
+    transform:scale(1) rotate(0);   
+    display: inherit;     
+}
+@keyframes slide{
+    from{
+        transform: rotateY(0);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
 
 /* ___________________________________________________________________________________________________________________________________________________________________________*/
                         
@@ -973,6 +1091,7 @@ footer{
         width: auto;
         display: inline-block;
         box-sizing: border-box;  
+        
     }
     #last_lien a{
         margin:0;
@@ -987,6 +1106,7 @@ footer{
 /* ___________________________________________________________________________________________________________________________________________________________________________*/
 
     #about_me{
+        position: relative;
         box-sizing: border-box;
         margin:0;
         width:100vw;
@@ -1015,6 +1135,7 @@ footer{
 
     }
     #competences{
+        
         width:auto;
         display:flex;
         flex-direction: column;
@@ -1023,6 +1144,15 @@ footer{
     }
     #competences p {
         margin-left: 2vw;
+    }
+    #javascript{
+        width: 70vw;
+        height: 60vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -20%);
+        background-color: blue;
     }
 
 /* ___________________________________________________________________________________________________________________________________________________________________________*/

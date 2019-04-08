@@ -2,11 +2,12 @@ function apparence() {
     var menu = document.getElementById("burger");
     var icone = document.getElementById("icone");
     menu.style.transition ="all 1s";
+    var x = window.matchMedia("(min-width: 1050px)");
 
-    menu.classList = (menu.classList == 'burger_invisible')
-     ? "burger_visible" : "burger_invisible";
+    menu.style.transform = (menu.style.transform == 'translateX(0vw)')
+     ? "translateX(-20vw)" : "translateX(0vw)";
 
-    icone.classList = (icone.classList == 'fas fa-times')
+    icone.style.transform = (icone.style.transform == 'fas fa-times')
     ? "fas fa-bars" : "fas fa-times";
 
     // if (index == 'burger_invisible'){
@@ -82,11 +83,13 @@ function bar_progress(){
     var quantite1 = document.getElementById('quantite1');
     var quantite2 = document.getElementById('quantite2');
     var quantite3 = document.getElementById('quantite3');
+    var quantite4 = document.getElementById('quantite4');
 
     if(window.scrollY >= div_competences){
         quantite1.style.animation = "chargement_1 5s"; 
         quantite2.style.animation = "chargement_2 5s";   
-        quantite3.style.animation = "chargement_3 5s";             
+        quantite3.style.animation = "chargement_3 5s"; 
+        quantite4.style.animation = "chargement_4 5s";             
     }
     // else {
     //     quantite1.style.animation = ""; 
